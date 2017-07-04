@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Barcode Test</string>
+    <string name="author">著者名</string>
+    <string name="title">タイトル</string>
+</resources>
