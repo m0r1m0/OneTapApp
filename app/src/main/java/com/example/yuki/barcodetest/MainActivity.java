@@ -15,11 +15,22 @@ import com.google.zxing.integration.android.IntentResult;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     List<BookModel> mainListData;
     MainListAdapter adapter;
     int REQUEST_RESULTACTIVITY = 1001;
+    private String isbncode;
+    private String title;
+    private String author;
+    private String salesDate;
+    private String publisherName;
+    private String itemCaption;
+    ShowallApi showallApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +56,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("debug", "onStart");
+        // api送信してDBに登録されている情報を取得する処理
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://ctl.lineqlog.info/isbn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        showallApi = retrofit.create(ShowallApi.class);
+
+        Call<List<BookModel>> showallBook = showallApi.apiShowallBook(isbncode);
+
+
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
@@ -60,9 +87,6 @@ public class MainActivity extends AppCompatActivity {
             // putExtra(キー, 渡したいデータ)
             String isbn = scanResult.getContents();
             intent.putExtra("scanResult", isbn);
-            // 返しを受け取るためのリクエストコード
-            // int reauestCode = REQUEST_RESULTACTIVITY;
-            // SubActivity呼び出し
             startActivity(intent);
         }
 

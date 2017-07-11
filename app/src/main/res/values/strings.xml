@@ -2,4 +2,10 @@
     <string name="app_name">Barcode Test</string>
     <string name="author">著者名</string>
     <string name="title">タイトル</string>
+    <string name="bookTitle">タイトル</string>
+    <string name="salesDate_text">発売日</string>
+    <string name="publisher_text">出版社名</string>
+    <string name="itemCaption_text">キャプション</string>
+    <string name="register">登録</string>
+    <string name="back">戻る</string>
 </resources>

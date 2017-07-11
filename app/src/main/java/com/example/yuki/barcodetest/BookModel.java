@@ -11,6 +11,7 @@ public class BookModel {
     private String salesDate;
     private String publisherName;
     private String itemCaption;
+    private String result;
 
     public String getTitle() {
         return title;
@@ -30,5 +31,9 @@ public class BookModel {
 
     public String getItemCaption() {
         return itemCaption;
+    }
+
+    public String getResult() {
+        return result;
     }
 }
