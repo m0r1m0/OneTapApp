@@ -14,7 +14,7 @@
         android:text="@string/bookTitle"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,7 +34,8 @@
         app:layout_constraintTop_toBottomOf="@+id/title_text"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.043" />
 
     <TextView
         android:id="@+id/salesDate_text"
@@ -48,13 +49,14 @@
         app:layout_constraintTop_toBottomOf="@+id/author_text"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.043" />
 
     <TextView
         android:id="@+id/publisher_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="29dp"
         android:text="@string/publisher_text"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -62,7 +64,8 @@
         app:layout_constraintTop_toBottomOf="@+id/salesDate_text"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintHorizontal_bias="0.043" />
 
     <TextView
         android:id="@+id/itemCaption_text"
@@ -70,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="@string/itemCaption_text"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/publisher_text"
@@ -82,31 +86,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="62dp"
-        android:layout_marginLeft="63dp"
-        android:layout_marginRight="62dp"
         android:layout_marginStart="63dp"
         android:onClick="onClickRegister"
         android:text="@string/register"
         app:layout_constraintBaseline_toBaselineOf="@+id/back_button"
-        app:layout_constraintLeft_toLeftOf="@+id/salesDate_text"
-        app:layout_constraintRight_toRightOf="parent"
         tools:ignore="MissingConstraints,RtlHardcoded"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/back_button"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.792" />
 
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="60dp"
         android:onClick="onClickBack"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="RtlHardcoded"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1" />
+
 </android.support.constraint.ConstraintLayout>

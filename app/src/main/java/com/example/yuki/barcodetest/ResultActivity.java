@@ -50,23 +50,29 @@ public class ResultActivity extends AppCompatActivity {
         bookListCall.enqueue(new Callback<List<BookModel>>() {
             @Override
             public void onResponse(Call<List<BookModel>> call, Response<List<BookModel>> response) {
-                Log.d("isbn", "onResponse: " + response.body().get(0).getAuthor());
-                title = response.body().get(0).getTitle();
-                author = response.body().get(0).getAuthor();
-                salesDate = response.body().get(0).getSalesDate();
-                publisherName = response.body().get(0).getPublisherName();
-                itemCaption = response.body().get(0).getItemCaption();
+                Log.d("isbn", "onResponse: " + response.body().get(0).getResult());
+                String result = (String) response.body().get(0).getResult();
+                Log.d("debug",result);
+                if (result.equals("error")) {
+                    Toast.makeText(getApplicationContext(), "このISBNコードの本は見つかりませんでした", Toast.LENGTH_LONG).show();
+                } else {
+                    title = response.body().get(0).getTitle();
+                    author = response.body().get(0).getAuthor();
+                    salesDate = response.body().get(0).getSalesDate();
+                    publisherName = response.body().get(0).getPublisherName();
+                    itemCaption = response.body().get(0).getItemCaption();
 
-                TextView titleText = (TextView) findViewById(R.id.title_text);
-                TextView authorText = (TextView) findViewById(R.id.author_text);
-                TextView salesDateText = (TextView) findViewById(R.id.salesDate_text);
-                TextView publisherText = (TextView) findViewById(R.id.publisher_text);
-                TextView itemCaptionText = (TextView) findViewById(R.id.itemCaption_text);
-                titleText.setText(title);
-                authorText.setText(author);
-                salesDateText.setText(salesDate);
-                publisherText.setText(publisherName);
-                itemCaptionText.setText(itemCaption);
+                    TextView titleText = (TextView) findViewById(R.id.title_text);
+                    TextView authorText = (TextView) findViewById(R.id.author_text);
+                    TextView salesDateText = (TextView) findViewById(R.id.salesDate_text);
+                    TextView publisherText = (TextView) findViewById(R.id.publisher_text);
+                    TextView itemCaptionText = (TextView) findViewById(R.id.itemCaption_text);
+                    titleText.setText("タイトル："+title);
+                    authorText.setText("著者名："+author);
+                    salesDateText.setText("発売日："+salesDate);
+                    publisherText.setText("出版社："+publisherName);
+                    itemCaptionText.setText("キャプション："+itemCaption);
+                }
             }
 
             @Override

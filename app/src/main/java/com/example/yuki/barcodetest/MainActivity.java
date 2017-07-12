@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 BookModel book = adapter.getItem(position);
                 String url = book.getItemurl();
                 Log.d("debug",url+"がURLです");
-                if (url != "") {
+                if (!url.equals("")) {
                     Uri uri = Uri.parse(url);
                     Intent i = new Intent(Intent.ACTION_VIEW,uri);
                     startActivity(i);
