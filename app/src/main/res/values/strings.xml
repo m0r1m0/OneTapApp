@@ -8,4 +8,6 @@
     <string name="itemCaption_text">キャプション</string>
     <string name="register">登録</string>
     <string name="back">戻る</string>
+    <string name="series_name">シリーズ名</string>
+    <string name="salesDate">発売日</string>
 </resources>

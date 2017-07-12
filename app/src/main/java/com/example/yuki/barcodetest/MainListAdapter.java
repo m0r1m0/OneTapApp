@@ -1,6 +1,7 @@
 package com.example.yuki.barcodetest;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class MainListAdapter extends BaseAdapter {
         super();
         listData = data;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        Log.d("debug","MainListAdapter");
 
     }
     @Override
@@ -45,6 +47,8 @@ public class MainListAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.titleText = (TextView)convertView.findViewById(R.id.title_text);
             holder.authorText = (TextView)convertView.findViewById(R.id.author_text);
+            holder.salesDate_text = (TextView)convertView.findViewById(R.id.salesDate_text);
+            holder.series_text = (TextView)convertView.findViewById(R.id.series_text);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder)convertView.getTag();
@@ -53,12 +57,16 @@ public class MainListAdapter extends BaseAdapter {
         BookModel book = getItem(position);
         holder.titleText.setText(book.getTitle()+"");
         holder.authorText.setText(book.getAuthor());
-
+        holder.salesDate_text.setText(book.getSalesDate());
+        holder.series_text.setText(book.getSeriesName());
+        Log.d("debug",book.getItemurl());
         return convertView;
     }
 
     private static class ViewHolder {
         public TextView titleText;
         public TextView authorText;
+        public TextView salesDate_text;
+        public TextView series_text;
     }
 }

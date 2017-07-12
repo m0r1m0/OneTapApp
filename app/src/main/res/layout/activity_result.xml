@@ -13,6 +13,7 @@
         android:layout_marginTop="70dp"
         android:text="@string/bookTitle"
         android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -98,13 +99,14 @@
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:onClick="onClickBack"
         android:text="@string/back"
-        tools:ignore="RtlHardcoded"
-        tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="90dp"
-        app:layout_constraintHorizontal_bias="0.26" />
+        tools:ignore="RtlHardcoded"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
 </android.support.constraint.ConstraintLayout>

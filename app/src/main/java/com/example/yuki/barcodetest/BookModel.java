@@ -12,6 +12,8 @@ public class BookModel {
     private String publisherName;
     private String itemCaption;
     private String result;
+    private String seriesName;
+    private String itemurl;
 
     public String getTitle() {
         return title;
@@ -35,5 +37,13 @@ public class BookModel {
 
     public String getResult() {
         return result;
+    }
+
+    public String getSeriesName() {
+        return seriesName;
+    }
+
+    public String getItemurl() {
+        return itemurl;
     }
 }

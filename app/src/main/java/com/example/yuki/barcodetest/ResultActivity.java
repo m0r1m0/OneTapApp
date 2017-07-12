@@ -102,4 +102,8 @@ public class ResultActivity extends AppCompatActivity {
         });
 
     }
+
+    public void onClickBack(View view) {
+        finish();
+    }
 }

@@ -7,11 +7,24 @@
         android:id="@+id/title_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title" />
+        android:text="@string/title"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/author_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/author" />
+
+    <TextView
+        android:id="@+id/series_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/series_name" />
+
+    <TextView
+        android:id="@+id/salesDate_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/salesDate" />
 </LinearLayout>
